@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const Header = () => {
   return (
-    <div className="flex justify-between items-center border-b-2 border-black p-4 relative ">
+    <div className="flex justify-between items-center border-b-2 border-black p-4 relative">
       <Link
         className="w-1/3"
         href={{
