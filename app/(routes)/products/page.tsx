@@ -1,6 +1,6 @@
-const Products = () => {
+export default function Products() {
   return (
-    <div>
+    <div className="text-center">
       <h1>This is the products page.</h1>
       <p>
         Here all our products and services will be shown in clickable cards.
@@ -8,6 +8,4 @@ const Products = () => {
       <p>The cards will contain a short description, as well as prices.</p>
     </div>
   );
-};
-
-export default Products;
+}

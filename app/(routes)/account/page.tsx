@@ -1,6 +1,6 @@
-const Account = () => {
+export default function Account() {
   return (
-    <div>
+    <div className="text-center">
       <h1>This is the account page.</h1>
       <p>Here you should be able to log in, or register an account.</p>
       <p>
@@ -9,6 +9,4 @@ const Account = () => {
       </p>
     </div>
   );
-};
-
-export default Account;
+}
