@@ -4,22 +4,29 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-rgb: 160, 160, 160;
+  --background-rgb: 255, 255, 255;
+  --header-rgb: 225, 225, 225;
+  --footer-rgb: 225, 225, 225;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-rgb: 0, 0, 0;
-    --background-rgb: 50, 50, 50;
+    --background-rgb: 15, 15, 15;
+    --header-rgb: 25, 25, 25;
+    --footer-rgb: 25, 25, 25;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-    to bottom,
-    rgba(var(--background-rgb), 1),
-    rgba(var(--background-rgb), 0.6)
-  );
+  background: rgba(var(--background-rgb), 1);
+}
+
+#header {
+  background: rgba(var(--header-rgb));
+}
+
+#footer {
+  background: rgba(var(--footer-rgb));
 }
