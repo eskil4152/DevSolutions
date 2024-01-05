@@ -1,9 +1,9 @@
-import Image from "next/image";
+"use client";
 
 export default function Home() {
   return (
-    <div className="text-center">
-      <h1>A</h1>
+    <div>
+      <p>Hello and welcome to DevSolutions</p>
     </div>
   );
 }
