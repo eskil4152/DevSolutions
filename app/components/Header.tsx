@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export const Header = () => {
+export default function Header() {
   return (
     <div
       id="header"
@@ -34,4 +34,4 @@ export const Header = () => {
       </Link>
     </div>
   );
-};
+}

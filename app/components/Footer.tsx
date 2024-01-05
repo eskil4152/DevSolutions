@@ -1,9 +1,6 @@
-export const Footer = () => {
+export default function Footer() {
   return (
-    <div
-      id="footer"
-      className="bottom-0 border-t-2 w-full py-2 pl-4 border-black"
-    >
+    <div id="footer" className="bottom-0 border-t-2 py-2 pl-4 border-black">
       <ul>
         <li>About Us</li>
         <li>FAQ</li>
@@ -11,4 +8,4 @@ export const Footer = () => {
       </ul>
     </div>
   );
-};
+}
