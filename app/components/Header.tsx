@@ -4,7 +4,7 @@ export const Header = () => {
   return (
     <div
       id="header"
-      className="flex justify-between items-center border-b-2 border-black p-4 relative"
+      className="flex justify-between items-center border-b-2 border-black p-4"
     >
       <Link
         className="w-1/3"

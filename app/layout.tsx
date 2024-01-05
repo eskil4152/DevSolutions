@@ -17,13 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" style={{ height: "100%" }}>
+    <html lang="en" style={{ minHeight: "100vh" }}>
       <body className={inter.className}>
         <Header />
         {children}
-        <div className="">
-          <Footer />
-        </div>
+        <Footer />
       </body>
     </html>
   );

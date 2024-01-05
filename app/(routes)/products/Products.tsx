@@ -1,7 +1,5 @@
 "use client";
-
 import ServicePreview from "@/app/cards/ServicePreview";
-import GetProducts from "@/app/tools/GetFromAPI";
 
 export default function Products() {
   var data = GetProducts();
