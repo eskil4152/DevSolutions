@@ -1,7 +1,7 @@
 "use client";
 
-import fetchJSON from "./FetchJson";
-import useLoading from "./UseLoading";
+import fetchJSON from "../app/tools/FetchJson";
+import useLoading from "../app/tools/UseLoading";
 
 export default function GetProducts() {
   const { loading, error, data } = useLoading(
