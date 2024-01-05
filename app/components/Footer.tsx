@@ -10,10 +10,21 @@ export default function Footer() {
       >
         <h3 className="font-bold text-lg">About Us</h3>
       </Link>
-      <ul>
-        <li>FAQ</li>
-        <li>Customer Service</li>
-      </ul>
+      <Link
+        href={{
+          pathname: "/customerservice",
+        }}
+      >
+        <h3 className="font-bold text-lg">Customer Service</h3>
+      </Link>
+
+      <Link
+        href={{
+          pathname: "/faq",
+        }}
+      >
+        <h3 className="font-bold text-lg">FAQ</h3>
+      </Link>
     </div>
   );
 }
