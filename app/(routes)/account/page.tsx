@@ -21,7 +21,19 @@ export default function Account() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    router.push("/");
+    const data = await LogIn(username, password);
+
+    if (data.status === 200) {
+      setError("");
+      router.push("/");
+    } else if (data.status === 401) {
+      setError("Wrong Password");
+    } else {
+      setError("An error occured");
+    }
+
+    console.log(data.status);
+    console.log(data.text());
   }
 
   return (
