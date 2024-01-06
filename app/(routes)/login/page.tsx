@@ -1,6 +1,7 @@
 "use client";
 
 import LogIn from "@/ApiCallers/LogInApi";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -31,14 +32,11 @@ export default function Account() {
     } else {
       setError("An error occured");
     }
-
-    console.log(data.status);
-    console.log(data.text());
   }
 
   return (
     <div className="text-center ">
-      <h1 className="text-xl font-semibold mt-2">Log In / Register</h1>
+      <h1 className="text-xl font-semibold mt-2">Log In</h1>
 
       <form onSubmit={handleSubmit}>
         <input
@@ -67,9 +65,20 @@ export default function Account() {
 
         <br />
 
-        <button className="border-2 border-black px-4 rounded-full mt-2 dark:border-white">
-          Log In / Register
-        </button>
+        <div className="flex justify-center gap-8">
+          <button className="border-2 border-black px-4 rounded-full mt-2 dark:border-white">
+            Log In
+          </button>
+
+          <Link
+            className="text-center border-2 border-black px-4 rounded-full mt-2"
+            href={{
+              pathname: "/register",
+            }}
+          >
+            <p>Register</p>
+          </Link>
+        </div>
       </form>
 
       <br />
