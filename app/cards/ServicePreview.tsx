@@ -10,13 +10,14 @@ export default function ServiceType({ service }: TypeProps) {
   const { id, name, description, price } = service;
 
   return (
-    <div>
-      <p>Id: {id}</p>
-      <p>Name: {name}</p>
-      <p>Description: {description}</p>
-      <p>Price: {price}</p>
+    <div className="border-2 border-black p-2 flex flex-col items-center">
+      <p>{name}</p>
+      <p>{description}</p>
+      <p>NOK {price}kr</p>
 
-      <h3>View</h3>
+      <div className="h-1 w-[50%] bg-black my-2" />
+
+      <p>View More</p>
     </div>
   );
 }
