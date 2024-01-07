@@ -27,10 +27,10 @@ export default function Header() {
       <Link
         className="w-1/3 text-right"
         href={{
-          pathname: "/account",
+          pathname: "/login",
         }}
       >
-        <p>Account</p>
+        <p>Log In</p>
       </Link>
     </div>
   );

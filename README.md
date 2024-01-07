@@ -3,7 +3,7 @@
 Enter desc here
 
 ## TODO
--[ ] Get FAQ from API
+-[x] Get FAQ from API
 -[ ] Improve FAQ design
 -[ ] Improve products design
 -[ ] Add login and account (requires server-side login as well)

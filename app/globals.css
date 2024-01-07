@@ -12,9 +12,9 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-rgb: 15, 15, 15;
-    --header-rgb: 25, 25, 25;
-    --footer-rgb: 25, 25, 25;
+    --background-rgb: 30, 30, 30;
+    --header-rgb: 50, 50, 50;
+    --footer-rgb: 50, 50, 50;
   }
 }
 
