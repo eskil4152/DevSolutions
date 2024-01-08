@@ -26,7 +26,7 @@ export default function LogIn() {
 
     if (data.status === 200) {
       setError("");
-      router.push("/");
+      window.location.href = "/";
     } else if (data.status === 401) {
       setError("Wrong Password");
     } else {
