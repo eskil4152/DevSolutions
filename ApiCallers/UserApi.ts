@@ -15,5 +15,5 @@ export default function RegisterAPI() {
       })
   );
 
-  return data;
+  return { loading, error, data };
 }

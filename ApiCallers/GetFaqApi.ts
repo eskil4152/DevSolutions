@@ -7,5 +7,6 @@ export default function GetFaq() {
   const { loading, error, data } = useLoading(
     async () => await fetchJSON("http://localhost:8080/api/faq")
   );
-  return data;
+
+  return { loading, error, data };
 }

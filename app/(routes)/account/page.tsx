@@ -3,8 +3,16 @@
 import UserApi from "@/ApiCallers/UserApi";
 
 export default function Account() {
-  const data = UserApi();
+  const { loading, error, data } = UserApi();
   console.log(data?.data);
+
+  while (loading) {
+    return (
+      <div>
+        <h1>Loading...</h1>
+      </div>
+    );
+  }
 
   if (data?.status === 200) {
     return (
@@ -14,12 +22,22 @@ export default function Account() {
         </h2>
       </div>
     );
-  } else if (!data?.status) {
-    return <h1>Loading...</h1>;
+  } else if (data?.status === 404) {
+    return (
+      <div>
+        <h1>You do not have an account, or you are not logged in</h1>
+      </div>
+    );
+  } else if (error) {
+    return (
+      <div>
+        <h1>Error: {error.message}</h1>
+      </div>
+    );
   } else {
     return (
       <div>
-        <p>Error</p>
+        <h1>Error: Unknown error occured</h1>
       </div>
     );
   }

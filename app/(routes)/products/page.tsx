@@ -4,7 +4,15 @@ import ServicePreview from "@/app/cards/ServicePreview";
 import GetProducts from "@/ApiCallers/GetProductsAPI";
 
 export default function Products() {
-  var data = GetProducts();
+  const { loading, error, data } = GetProducts();
+
+  while (loading) {
+    return (
+      <div>
+        <h1>Loading...</h1>
+      </div>
+    );
+  }
 
   if (data?.status === 200) {
     return (
@@ -20,16 +28,16 @@ export default function Products() {
         </div>
       </div>
     );
-  } else if (!data?.status) {
+  } else if (error) {
     return (
       <div>
-        <h1>Loading...</h1>
+        <h1>Error: {error.message}</h1>
       </div>
     );
   } else {
     return (
       <div>
-        <p style={{ color: "red" }}>{data?.status}Unknown error occured</p>
+        <p style={{ color: "red" }}>Error: Unknown error occured</p>
       </div>
     );
   }

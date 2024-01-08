@@ -7,5 +7,6 @@ export default function GetProducts() {
   const { loading, error, data } = useLoading(
     async () => await fetchJSON("http://localhost:8080/api/product/all")
   );
-  return data;
+
+  return { loading, error, data };
 }
