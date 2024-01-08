@@ -1,6 +1,10 @@
 import Link from "next/link";
+import { cookies } from "next/headers";
 
 export default function Header() {
+  const cookiesList = cookies();
+  const hasCookie = cookiesList.has("Authorization");
+
   return (
     <div
       id="header"
@@ -24,14 +28,25 @@ export default function Header() {
         <p>Products</p>
       </Link>
 
-      <Link
-        className="w-1/3 text-right"
-        href={{
-          pathname: "/login",
-        }}
-      >
-        <p>Log In</p>
-      </Link>
+      <div className="w-1/3 text-right">
+        {hasCookie ? (
+          <Link
+            href={{
+              pathname: "/account",
+            }}
+          >
+            <p>Account</p>
+          </Link>
+        ) : (
+          <Link
+            href={{
+              pathname: "/login",
+            }}
+          >
+            <p>Log In</p>
+          </Link>
+        )}
+      </div>
     </div>
   );
 }

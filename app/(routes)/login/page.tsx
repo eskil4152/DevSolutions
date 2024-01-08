@@ -1,11 +1,11 @@
 "use client";
 
-import LogIn from "@/ApiCallers/LogInApi";
+import LogInAPI from "@/ApiCallers/LogInApi";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export default function Account() {
+export default function LogIn() {
   const router = useRouter();
 
   const [username, setUsername] = useState("");
@@ -22,11 +22,11 @@ export default function Account() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    const data = await LogIn(username, password);
+    const data = await LogInAPI(username, password);
 
     if (data.status === 200) {
       setError("");
-      router.push("/");
+      window.location.href = "/";
     } else if (data.status === 401) {
       setError("Wrong Password");
     } else {
@@ -45,7 +45,7 @@ export default function Account() {
           width={10}
           height={5}
           placeholder="Username / Email"
-          className="border-2 border-black my-2 p-[3px]"
+          className="border-2 border-black my-2 p-[3px] dark:text-black"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
@@ -54,24 +54,24 @@ export default function Account() {
 
         <input
           type={passwordVisible ? "text" : "password"}
-          id="username"
+          id="password"
           width={10}
           height={5}
           placeholder="Password"
-          className="border-2 border-black my-2 p-[3px]"
+          className="border-2 border-black my-2 p-[3px] dark:text-black"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
 
         <br />
 
-        <div className="flex justify-center gap-8">
+        <div className="flex justify-center gap-10">
           <button className="border-2 border-black px-4 rounded-full mt-2 dark:border-white">
             Log In
           </button>
 
           <Link
-            className="text-center border-2 border-black px-4 rounded-full mt-2"
+            className="text-center border-2 border-black px-4 rounded-full mt-2 dark:border-white"
             href={{
               pathname: "/register",
             }}

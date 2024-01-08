@@ -2,6 +2,9 @@
 
 Enter desc here
 
+# SET COOKIE ON SECURE BEFORE PRODUCTION
+### secure cookie unavailable over http on safari
+
 ## TODO
 -[x] Get FAQ from API
 -[ ] Improve FAQ design

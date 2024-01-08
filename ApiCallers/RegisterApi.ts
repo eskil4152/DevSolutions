@@ -1,7 +1,11 @@
 "use client";
 
-export default async function LogInAPI(username: string, password: string) {
-  const data = await fetch("http://localhost:8080/api/login", {
+export default async function RegisterAPI(
+  username: string,
+  password: string,
+  email: string
+) {
+  const data = await fetch("http://localhost:8080/api/register", {
     method: "post",
     headers: {
       "Content-Type": "application/json",
@@ -10,6 +14,7 @@ export default async function LogInAPI(username: string, password: string) {
     body: JSON.stringify({
       username: username,
       password: password,
+      email: email,
     }),
   });
 
