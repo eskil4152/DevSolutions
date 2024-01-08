@@ -45,7 +45,7 @@ export default function LogIn() {
           width={10}
           height={5}
           placeholder="Username / Email"
-          className="border-2 border-black my-2 p-[3px]"
+          className="border-2 border-black my-2 p-[3px] dark:text-black"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
@@ -58,7 +58,7 @@ export default function LogIn() {
           width={10}
           height={5}
           placeholder="Password"
-          className="border-2 border-black my-2 p-[3px]"
+          className="border-2 border-black my-2 p-[3px] dark:text-black"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
@@ -71,7 +71,7 @@ export default function LogIn() {
           </button>
 
           <Link
-            className="text-center border-2 border-black px-4 rounded-full mt-2"
+            className="text-center border-2 border-black px-4 rounded-full mt-2 dark:border-white"
             href={{
               pathname: "/register",
             }}

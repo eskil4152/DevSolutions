@@ -99,7 +99,7 @@ export default function Register() {
             type="text"
             id="username"
             placeholder="Username"
-            className="border-2 border-black my-2 p-[3px]"
+            className="border-2 border-black my-2 p-[3px] dark:text-black"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
@@ -111,7 +111,7 @@ export default function Register() {
             type="email"
             id="email"
             placeholder="Email"
-            className="border-2 border-black my-2 p-[3px]"
+            className="border-2 border-black my-2 p-[3px] dark:text-black"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -123,7 +123,7 @@ export default function Register() {
             type={passwordVisible ? "text" : "password"}
             id="password"
             placeholder="Password"
-            className="border-2 border-black my-2 p-[3px]"
+            className="border-2 border-black my-2 p-[3px] dark:text-black"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -134,7 +134,7 @@ export default function Register() {
             type={passwordVisible ? "text" : "password"}
             id="confirmPassword"
             placeholder="Confirm Password"
-            className="border-2 border-black my-2 p-[3px]"
+            className="border-2 border-black my-2 p-[3px] dark:text-black"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
