@@ -1,25 +1,28 @@
 "use client";
 
 import RegisterAPI from "@/ApiCallers/RegisterApi";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Register() {
   const router = useRouter();
 
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const [error, setError] = useState("");
 
-  const [emailError, setEmailError] = useState("");
+  const [nameError, setNameError] = useState("");
   const [usernameError, setUsernameError] = useState("");
+  const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
   const [validUsername, setValidUsername] = useState(false);
+  const [validName, setValidName] = useState(false);
   const [validEmail, setValidEmail] = useState(false);
   const [validPassword, setValidPassword] = useState(false);
 
@@ -31,6 +34,16 @@ export default function Register() {
 
   const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  useEffect(() => {
+    if (firstname.length < 2 || lastname.length < 2) {
+      setNameError("Please enter a name");
+      setValidName(false);
+    } else {
+      setNameError("");
+      setValidName(true);
+    }
+  }, [firstname, lastname]);
 
   useEffect(() => {
     if (!passwordRegex.test(password)) {
@@ -71,13 +84,18 @@ export default function Register() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    if (!validUsername || !validEmail || !validPassword) {
-      console.log(validEmail + ", " + validPassword + ", " + validUsername);
+    if (!validUsername || !validEmail || !validPassword || !validName) {
       setError("Please fill all requirements");
       return;
     }
 
-    const data = await RegisterAPI(username, password, email);
+    const data = await RegisterAPI(
+      firstname,
+      lastname,
+      username,
+      password,
+      email
+    );
 
     if (data.status === 200) {
       setError("");
@@ -94,6 +112,25 @@ export default function Register() {
       <h1 className="text-xl font-semibold mt-2">Register</h1>
 
       <form onSubmit={handleSubmit}>
+        <div>
+          <input
+            type="text"
+            id="firstname"
+            placeholder="Firstname"
+            className="border-2 border-black my-2 p-[3px] dark:text-black"
+            value={firstname}
+            onChange={(e) => setFirstname(e.target.value)}
+          />
+          <input
+            type="text"
+            id="lastname"
+            placeholder="Lastname"
+            className="border-2 border-black my-2 p-[3px] dark:text-black"
+            value={lastname}
+            onChange={(e) => setLastname(e.target.value)}
+          />
+          <p className="text-red-600 font-bold text-sm">{nameError}</p>
+        </div>
         <div>
           <input
             type="text"

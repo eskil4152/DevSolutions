@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 
 export default function Header() {
   const cookiesList = cookies();
-  const hasCookie = cookiesList.has("Authorization");
+  const hasCookie = cookiesList.has("Authentication");
 
   return (
     <div

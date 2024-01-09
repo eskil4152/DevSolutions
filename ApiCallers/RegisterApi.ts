@@ -1,6 +1,8 @@
 "use client";
 
 export default async function RegisterAPI(
+  firstname: string,
+  lastname: string,
   username: string,
   password: string,
   email: string
@@ -12,6 +14,8 @@ export default async function RegisterAPI(
     },
     credentials: "include",
     body: JSON.stringify({
+      firstname: firstname,
+      lastname: lastname,
       username: username,
       password: password,
       email: email,

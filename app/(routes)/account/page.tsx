@@ -23,7 +23,6 @@ export default function Account() {
         ) : (
           <AdminProfile data={response.data} />
         )}
-        ;
       </div>
     );
   } else if (response?.status === 404) {
