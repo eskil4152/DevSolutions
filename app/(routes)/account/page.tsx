@@ -4,7 +4,6 @@ import UserApi from "@/ApiCallers/UserApi";
 
 export default function Account() {
   const { loading, error, data } = UserApi();
-  console.log(data?.data);
 
   while (loading) {
     return (
@@ -20,6 +19,7 @@ export default function Account() {
         <h2>
           Hello, {data.data.username}! Your role: {data.data.role}
         </h2>
+        <p>{data.data.role == "ADMIN" ? "HEY" : "NO"}</p>
       </div>
     );
   } else if (data?.status === 404) {
