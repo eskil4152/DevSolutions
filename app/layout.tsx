@@ -4,7 +4,14 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  display: "auto",
+});
 
 export const metadata: Metadata = {
   title: "DevSolutions - Devs For Hire",
@@ -19,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={inter.className}
+        className={poppins.className}
         style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
       >
         <Header />

@@ -21,5 +21,5 @@ Enter desc here
         - [ ] View moderators, ability to revoke mod status
         - [ ] Metrics
             - [ ] Make metrics
-- [ ] Add new font, check Google Fonts
+- [x] Add new font, check Google Fonts
 - [ ] More
