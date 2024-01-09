@@ -4,8 +4,9 @@ import fetchJSON from "../app/tools/FetchJson";
 import useLoading from "../app/tools/UseLoading";
 
 export default function GetProducts() {
-  const { loading, error, data } = useLoading(
+  const { loading, error, response } = useLoading(
     async () => await fetchJSON("http://localhost:8080/api/product/all")
   );
-  return data;
+
+  return { loading, error, response };
 }

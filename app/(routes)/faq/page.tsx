@@ -3,14 +3,22 @@
 import GetFaq from "@/ApiCallers/GetFaqApi";
 
 export default function Faq() {
-  var data = GetFaq();
+  const { loading, error, response } = GetFaq();
 
-  if (data?.status === 200) {
+  while (loading) {
+    return (
+      <div>
+        <h1>Loading...</h1>
+      </div>
+    );
+  }
+
+  if (response?.status === 200) {
     return (
       <div>
         <h1 className="p-2">Frequently Asked Questions: </h1>
         <div>
-          {data.data.map((question: FaqType) => (
+          {response.data.map((question: FaqType) => (
             <div className="p-2">
               <p>{question.question}</p>
               <p>{question.answer}</p>
@@ -19,16 +27,16 @@ export default function Faq() {
         </div>
       </div>
     );
-  } else if (!data?.status) {
+  } else if (error) {
     return (
       <div>
-        <h1>Loading...</h1>
+        <h1>Error: {error.message}</h1>
       </div>
     );
   } else {
     return (
       <div>
-        <p style={{ color: "red" }}>{data?.status}Unknown error occured</p>
+        <p style={{ color: "red" }}>Error: Unknown error occured</p>
       </div>
     );
   }
