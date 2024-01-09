@@ -4,7 +4,7 @@ import ServicePreview from "@/app/cards/ServicePreview";
 import GetProducts from "@/ApiCallers/GetProductsAPI";
 
 export default function Products() {
-  const { loading, error, data } = GetProducts();
+  const { loading, error, response } = GetProducts();
 
   while (loading) {
     return (
@@ -14,7 +14,7 @@ export default function Products() {
     );
   }
 
-  if (data?.status === 200) {
+  if (response?.status === 200) {
     return (
       <div className="text-center">
         <h1 className="text-2xl font-semibold mt-5">SERVICES: </h1>
@@ -22,7 +22,7 @@ export default function Products() {
           id="projects"
           className="grid grid-rows-2 grid-cols-2 gap-20 px-[15vw] my-5"
         >
-          {data.data.map((service: ServiceType) => (
+          {response.data.map((service: ServiceType) => (
             <ServicePreview service={service} key={service.id} />
           ))}
         </div>

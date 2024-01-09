@@ -4,7 +4,7 @@ import fetchJSON from "@/app/tools/FetchJson";
 import useLoading from "@/app/tools/UseLoading";
 
 export default function RegisterAPI() {
-  const { loading, error, data } = useLoading(
+  const { loading, error, response } = useLoading(
     async () =>
       await fetchJSON("http://localhost:8080/api/user", {
         method: "GET",
@@ -15,5 +15,5 @@ export default function RegisterAPI() {
       })
   );
 
-  return { loading, error, data };
+  return { loading, error, response };
 }

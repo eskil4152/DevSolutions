@@ -1,9 +1,11 @@
 "use client";
 
 import UserApi from "@/ApiCallers/UserApi";
+import AdminProfile from "@/app/cards/AdminProfile";
+import UserProfile from "@/app/cards/UserProfile";
 
 export default function Account() {
-  const { loading, error, data } = UserApi();
+  const { loading, error, response } = UserApi();
 
   while (loading) {
     return (
@@ -13,16 +15,18 @@ export default function Account() {
     );
   }
 
-  if (data?.status === 200) {
+  if (response?.status === 200) {
     return (
       <div>
-        <h2>
-          Hello, {data.data.username}! Your role: {data.data.role}
-        </h2>
-        <p>{data.data.role == "ADMIN" ? "HEY" : "NO"}</p>
+        {response.data.role === "USER" ? (
+          <UserProfile data={response.data} />
+        ) : (
+          <AdminProfile data={response.data} />
+        )}
+        ;
       </div>
     );
-  } else if (data?.status === 404) {
+  } else if (response?.status === 404) {
     return (
       <div>
         <h1>You do not have an account, or you are not logged in</h1>

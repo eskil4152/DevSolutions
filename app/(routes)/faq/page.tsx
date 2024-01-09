@@ -3,7 +3,7 @@
 import GetFaq from "@/ApiCallers/GetFaqApi";
 
 export default function Faq() {
-  const { loading, error, data } = GetFaq();
+  const { loading, error, response } = GetFaq();
 
   while (loading) {
     return (
@@ -13,12 +13,12 @@ export default function Faq() {
     );
   }
 
-  if (data?.status === 200) {
+  if (response?.status === 200) {
     return (
       <div>
         <h1 className="p-2">Frequently Asked Questions: </h1>
         <div>
-          {data.data.map((question: FaqType) => (
+          {response.data.map((question: FaqType) => (
             <div className="p-2">
               <p>{question.question}</p>
               <p>{question.answer}</p>

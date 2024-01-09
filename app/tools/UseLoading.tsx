@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 interface UseLoadingResult<T> {
   loading: boolean;
   error?: any;
-  data?: T;
+  response?: T;
   reload: () => Promise<void>;
 }
 
@@ -15,12 +15,12 @@ export default function useLoading<T>(
 ): UseLoadingResult<T> {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<any>();
-  const [data, setData] = useState<T>();
+  const [response, setResponse] = useState<T>();
 
   async function load() {
     try {
       setLoading(true);
-      setData(await loadingFunction());
+      setResponse(await loadingFunction());
     } catch (error) {
       setError(error);
     } finally {
@@ -32,5 +32,5 @@ export default function useLoading<T>(
     load();
   }, deps);
 
-  return { loading, error, data, reload: load };
+  return { loading, error, response, reload: load };
 }
