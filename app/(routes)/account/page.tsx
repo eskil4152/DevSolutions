@@ -3,7 +3,6 @@
 import UserApi from "@/ApiCallers/UserApi";
 import AdminProfile from "@/app/cards/AdminProfile";
 import UserProfile from "@/app/cards/UserProfile";
-import { useCookies } from "next-client-cookies";
 
 export default function Account() {
   const { loading, error, response } = UserApi();
