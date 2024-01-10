@@ -3,6 +3,7 @@
 import UserApi from "@/ApiCallers/UserApi";
 import AdminProfile from "@/app/cards/AdminProfile";
 import UserProfile from "@/app/cards/UserProfile";
+import { useCookies } from "next-client-cookies";
 
 export default function Account() {
   const { loading, error, response } = UserApi();
@@ -17,7 +18,7 @@ export default function Account() {
 
   if (response?.status === 200) {
     return (
-      <div>
+      <div className="">
         {response.data.role === "USER" ? (
           <UserProfile data={response.data} />
         ) : (

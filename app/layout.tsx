@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -35,10 +34,16 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={poppins.className}
-        style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100vh",
+        }}
       >
         <Header />
-        <div className="flex-grow">{children}</div>
+        <div id="children" className="flex-grow relative">
+          {children}
+        </div>
         <Footer />
       </body>
     </html>

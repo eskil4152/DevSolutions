@@ -2,12 +2,9 @@
 
 import LogInAPI from "@/ApiCallers/LogInApi";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function LogIn() {
-  const router = useRouter();
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
