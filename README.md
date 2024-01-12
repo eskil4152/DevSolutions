@@ -9,13 +9,16 @@ Enter desc here
 - [x] Get FAQ from API
 - [ ] Improve FAQ design
 - [ ] Improve products design
-- [ ] Make it so users can change account
-- [ ] Make users add their name
+- [ ] Drastically improve 'About us'
+- [ ] Do anything with landing page
+- [ ] Make it so users can log out
 - [x] Add login and account (requires server-side login as well)
     - [ ] Make and customise user page
+        - [x] Name on top, then user info
+        - [x] Big 'show purchases' button
         - [ ] See purchases
         - [ ] See status of ongoing project
-        - [ ] More
+        - [ ] Change account details / change account page
     - [ ] Make and customise admin page
         - [ ] View users
         - [ ] View moderators, ability to revoke mod status

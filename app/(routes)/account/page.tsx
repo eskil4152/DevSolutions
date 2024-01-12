@@ -17,7 +17,7 @@ export default function Account() {
 
   if (response?.status === 200) {
     return (
-      <div>
+      <div className="">
         {response.data.role === "USER" ? (
           <UserProfile data={response.data} />
         ) : (
