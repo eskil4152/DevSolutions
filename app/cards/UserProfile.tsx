@@ -1,4 +1,3 @@
-import Cookies from "js-cookie";
 import Link from "next/link";
 import toast from "react-hot-toast";
 
@@ -16,7 +15,7 @@ export default function UserProfile({ data }: any) {
           {data.firstname} {data.lastname}
         </h1>
 
-        <Link href="/account/purchases">
+        <Link href="/account/orders">
           <button className="border-[1px] border-black px-16 py-2 rounded-full mt-2 dark:border-white">
             Show All Purchases
           </button>
@@ -49,7 +48,6 @@ export default function UserProfile({ data }: any) {
 // Logout will not work as cookie is HTTPonly
 // Not sure what to do
 const handleLogout = () => {
-  Cookies.remove("Authentication", { path: "/", domain: "localhost" });
-
+  //Cookies.remove("Authentication", { path: "/", domain: "localhost" });
   // window.location.href = "/login";
 };
