@@ -1,13 +1,15 @@
+import Link from "next/link";
+
 interface TypeProps {
-  service: ServiceType | undefined;
+  product: ProductType | undefined;
 }
 
-export default function ServiceType({ service }: TypeProps) {
-  if (!service) {
+export default function ProductPreview({ product }: TypeProps) {
+  if (!product) {
     return null;
   }
 
-  const { id, name, description, price } = service;
+  const { id, name, description, price } = product;
 
   return (
     <div className="border-2 border-black dark:border-white p-2 flex flex-col items-center">
@@ -17,7 +19,9 @@ export default function ServiceType({ service }: TypeProps) {
 
       <div className="h-1 w-[50%] bg-black dark:bg-white my-2" />
 
-      <p>View More</p>
+      <Link href={"/products/" + id}>
+        <button>View more</button>
+      </Link>
     </div>
   );
 }

@@ -21,7 +21,7 @@ export default function Orders() {
       <div className="text-center flex flex-row px-[20vw] py-[10vh]">
         {response.data.map((order: any) => (
           <div key={order.id}>
-            <OrdersCard data={order} key={order.id} />
+            <OrdersCard order={order} key={order.id} />
           </div>
         ))}
       </div>
