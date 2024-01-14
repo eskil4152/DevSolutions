@@ -1,7 +1,21 @@
+import Logout from "@/ApiCallers/LogoutAPI";
 import Link from "next/link";
-import toast from "react-hot-toast";
+import { useState } from "react";
 
 export default function AdminProfile({ data }: any) {
+  const [error, setError] = useState("");
+
+  async function handleLogout() {
+    const data = await Logout();
+
+    if (data.status !== 200) {
+      setError("An error occured when attempting to log out, please try again");
+    }
+
+    setError("");
+    window.location.href = "/";
+  }
+
   return (
     <div className="container text-center relative">
       <div>
@@ -44,23 +58,21 @@ export default function AdminProfile({ data }: any) {
       </div>
 
       <div className="bottom-0 absolute w-full">
-        <button
-          className="border-2 border-black rounded-full mb-2 px-2 dark:border-white"
-          onClick={() => {
-            toast.success("HELLO");
-          }}
-        >
-          Change profile information
-        </button>
+        <Link href={"/account/update"}>
+          <button className="border-2 border-black rounded-full mb-2 px-2 dark:border-white">
+            Change profile information
+          </button>
+        </Link>
         <br />
         <button
           className="border-2 border-black rounded-full mb-2 px-2 dark:border-white"
           onClick={() => {
-            toast.error("Not working yet");
+            handleLogout();
           }}
         >
           Log out (not working)
         </button>
+        <p>{error}</p>
       </div>
     </div>
   );
