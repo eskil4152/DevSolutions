@@ -9,7 +9,7 @@ Enter desc here
 - [x] Get FAQ from API
 - [ ] Improve FAQ design
 - [ ] Improve products design
-- [ ] Fix order :any
+- [ ] Fix order type-any
 - [ ] Drastically improve 'About us'
 - [ ] Do anything with landing page
 - [ ] Make it so users can log out
@@ -23,6 +23,12 @@ Enter desc here
     - [ ] Make and customise admin page
         - [ ] View users
         - [ ] View moderators, ability to revoke mod status
+        - [x] Button for admin orders page
+            - [ ] Actual update to db
+        - [x] Button for admin faq page
+            - [ ] Actual update to db
+        - [x] Button for admin products page
+            - [ ] Actual update to db
         - [ ] Metrics
             - [ ] Make metrics
 - [x] Add new font, check Google Fonts
