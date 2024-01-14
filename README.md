@@ -9,6 +9,7 @@ Enter desc here
 - [x] Get FAQ from API
 - [ ] Improve FAQ design
 - [ ] Improve products design
+- [ ] Fix order :any
 - [ ] Drastically improve 'About us'
 - [ ] Do anything with landing page
 - [ ] Make it so users can log out
