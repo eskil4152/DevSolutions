@@ -1,9 +1,22 @@
-import Cookies from "js-cookie";
+import Logout from "@/ApiCallers/LogoutAPI";
 import Link from "next/link";
-import toast from "react-hot-toast";
+import { useState } from "react";
+import toast, { useToaster } from "react-hot-toast";
 
 export default function UserProfile({ data }: any) {
   // data.[firstname, lastname, username, email, role]
+  const [error, setError] = useState("");
+
+  async function handleLogout() {
+    const data = await Logout();
+
+    if (data.status !== 200) {
+      setError("An error occured when attempting to log out, please try again");
+    }
+
+    setError("");
+    window.location.href = "/";
+  }
 
   return (
     <div className="container text-center relative">
@@ -16,7 +29,7 @@ export default function UserProfile({ data }: any) {
           {data.firstname} {data.lastname}
         </h1>
 
-        <Link href="/account/purchases">
+        <Link href="/account/orders">
           <button className="border-[1px] border-black px-16 py-2 rounded-full mt-2 dark:border-white">
             Show All Purchases
           </button>
@@ -24,32 +37,24 @@ export default function UserProfile({ data }: any) {
       </div>
 
       <div className="bottom-0 absolute w-full">
-        <button
-          className="border-2 border-black rounded-full mb-2 px-2 dark:border-white"
-          onClick={() => {
-            toast.success("HELLO");
-          }}
-        >
-          Change profile information
-        </button>
+        <Link href={"/account/update"}>
+          <button className="border-2 border-black rounded-full mb-2 px-2 dark:border-white">
+            Change profile information
+          </button>
+        </Link>
+
         <br />
+
         <button
           className="border-2 border-black rounded-full mb-2 px-2 dark:border-white"
           onClick={() => {
-            toast.error("Not working yet");
+            handleLogout();
           }}
         >
-          Log out (not working)
+          Log out
         </button>
+        <p>{error}</p>
       </div>
     </div>
   );
 }
-
-// Logout will not work as cookie is HTTPonly
-// Not sure what to do
-const handleLogout = () => {
-  Cookies.remove("Authentication", { path: "/", domain: "localhost" });
-
-  // window.location.href = "/login";
-};

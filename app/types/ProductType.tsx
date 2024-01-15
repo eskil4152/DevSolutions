@@ -1,4 +1,4 @@
-type ServiceType = {
+type ProductType = {
   id: number;
   name: string;
   description: string;

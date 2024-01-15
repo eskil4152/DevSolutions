@@ -1,6 +1,6 @@
 "use client";
 
-import ServicePreview from "@/app/cards/ServicePreview";
+import ProductPreview from "@/app/cards/ProductPreview";
 import GetProducts from "@/ApiCallers/GetProductsAPI";
 
 export default function Products() {
@@ -22,8 +22,8 @@ export default function Products() {
           id="projects"
           className="grid grid-rows-2 grid-cols-2 gap-20 px-[15vw] my-5"
         >
-          {response.data.map((service: ServiceType) => (
-            <ServicePreview service={service} key={service.id} />
+          {response.data.map((product: ProductType) => (
+            <ProductPreview product={product} key={product.id} />
           ))}
         </div>
       </div>
