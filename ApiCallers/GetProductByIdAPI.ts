@@ -4,8 +4,10 @@ import fetchJSON from "../app/tools/FetchJson";
 import useLoading from "../app/tools/UseLoading";
 
 export default function GetProductsById(id: string) {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
+
   const { loading, error, response } = useLoading(
-    async () => await fetchJSON("http://localhost:8080/api/product/" + id)
+    async () => await fetchJSON(`${apiUrl}/api/products/${id}`)
   );
 
   return { loading, error, response };

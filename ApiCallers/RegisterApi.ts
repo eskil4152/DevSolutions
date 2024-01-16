@@ -7,7 +7,9 @@ export default async function RegisterAPI(
   password: string,
   email: string
 ) {
-  const data = await fetch("http://localhost:8080/api/register", {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
+
+  const data = await fetch(`${apiUrl}/api/register`, {
     method: "post",
     headers: {
       "Content-Type": "application/json",

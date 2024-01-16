@@ -1,5 +1,7 @@
 export default async function LogInAPI(username: string, password: string) {
-  const data = await fetch("http://localhost:8080/api/login", {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
+
+  const data = await fetch(`${apiUrl}/api/login`, {
     method: "post",
     headers: {
       "Content-Type": "application/json",
