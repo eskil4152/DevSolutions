@@ -1,6 +1,6 @@
-export default async function LogInAPI(username: string, password: string) {
-  const apiUrl = process.env.NEXT_PUBLIC_SERVER_BASE_URL;
+import apiUrl from "@/app/tools/config";
 
+export default async function LogInAPI(username: string, password: string) {
   const data = await fetch(`${apiUrl}/api/login`, {
     method: "post",
     headers: {

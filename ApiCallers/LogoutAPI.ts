@@ -1,6 +1,6 @@
-export default async function Logout() {
-  const apiUrl = process.env.NEXT_PUBLIC_SERVER_BASE_URL;
+import apiUrl from "@/app/tools/config";
 
+export default async function Logout() {
   const data = await fetch(`${apiUrl}/api/logout`, {
     method: "GET",
     headers: {
