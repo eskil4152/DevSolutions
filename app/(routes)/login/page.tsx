@@ -22,8 +22,10 @@ export default function LogIn() {
     const data = await LogInAPI(username, password);
 
     if (data.status === 200) {
+      console.log(data.headers);
+
       setError("");
-      window.location.href = "/";
+      //window.location.href = "/";
     } else if (data.status === 401) {
       setError("Wrong Password");
     } else {
