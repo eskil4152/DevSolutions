@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import GetFromStorage from "../tools/GetFromStorage";
 
 export default function Header() {
-  const hasToken = localStorage.getItem("Authorization");
+  const hasToken = GetFromStorage();
 
   return (
     <div

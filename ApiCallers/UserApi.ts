@@ -1,11 +1,12 @@
 "use client";
 
 import fetchJSON from "@/app/tools/FetchJson";
+import GetFromStorage from "@/app/tools/GetFromStorage";
 import useLoading from "@/app/tools/UseLoading";
 import apiUrl from "@/app/tools/config";
 
-export default function RegisterAPI() {
-  const token = localStorage.getItem("Authorization") || "null";
+export default function UserApi() {
+  const hasToken = GetFromStorage();
 
   const { loading, error, response } = useLoading(
     async () =>
@@ -13,7 +14,7 @@ export default function RegisterAPI() {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `${token}`,
+          Authorization: `${hasToken}`,
         },
         credentials: "include",
       })
