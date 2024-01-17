@@ -7,7 +7,7 @@ export default async function RegisterAPI(
   password: string,
   email: string
 ) {
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  const apiUrl = process.env.NEXT_PUBLIC_SERVER_BASE_URL;
 
   const data = await fetch(`${apiUrl}/api/register`, {
     method: "post",

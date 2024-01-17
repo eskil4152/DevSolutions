@@ -1,10 +1,6 @@
 "use client";
 
-require("dotenv").config();
-
 export default function Home() {
-  console.log("API URL home: " + process.env.NEXT_PUBLIC_API_URL);
-
   return (
     <div className="container border-2 border-black p-2">
       <p>Hello and welcome</p>
