@@ -14,7 +14,6 @@ export default async function RegisterAPI(
     headers: {
       "Content-Type": "application/json",
     },
-    credentials: "include",
     body: JSON.stringify({
       firstname: firstname,
       lastname: lastname,
@@ -23,6 +22,13 @@ export default async function RegisterAPI(
       email: email,
     }),
   });
+
+  if (data.ok) {
+    const jwtToken = data.headers.get("Authorization");
+    if (jwtToken) localStorage.setItem("Authorization", jwtToken);
+
+    return data;
+  }
 
   return data;
 }

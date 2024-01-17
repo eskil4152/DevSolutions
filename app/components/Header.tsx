@@ -1,9 +1,9 @@
+"use client";
+
 import Link from "next/link";
-import { cookies } from "next/headers";
 
 export default function Header() {
-  const cookiesList = cookies();
-  const hasCookie = cookiesList.has("Authentication");
+  const hasToken = localStorage.getItem("Authorization");
 
   return (
     <div
@@ -29,7 +29,7 @@ export default function Header() {
       </Link>
 
       <div className="w-1/3 text-right">
-        {hasCookie ? (
+        {hasToken ? (
           <Link
             href={{
               pathname: "/account",
