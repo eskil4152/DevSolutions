@@ -37,3 +37,11 @@ jobs:
         run: |
           docker build -t europe-west2-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/devsolutions-repository/client:latest .
           docker push europe-west2-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/devsolutions-repository/client:latest
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy client \
+            --image=europe-west2-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/devsolutions-repository/client:latest \
+            --platform=managed \
+            --region=europe-west2 \
+            --allow-unauthenticated
