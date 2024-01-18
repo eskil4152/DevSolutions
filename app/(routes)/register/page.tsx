@@ -99,7 +99,7 @@ export default function Register() {
 
     if (data.status === 200) {
       setError("");
-      router.push("/");
+      window.location.href = "/";
     } else if (data.status === 401) {
       setError("User already exists");
     } else {

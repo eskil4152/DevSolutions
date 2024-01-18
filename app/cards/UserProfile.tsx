@@ -1,22 +1,9 @@
-import Logout from "@/ApiCallers/LogoutAPI";
 import Link from "next/link";
 import { useState } from "react";
-import toast, { useToaster } from "react-hot-toast";
+import Logout from "../tools/Logout";
 
 export default function UserProfile({ data }: any) {
   // data.[firstname, lastname, username, email, role]
-  const [error, setError] = useState("");
-
-  async function handleLogout() {
-    const data = await Logout();
-
-    if (data.status !== 200) {
-      setError("An error occured when attempting to log out, please try again");
-    }
-
-    setError("");
-    window.location.href = "/";
-  }
 
   return (
     <div className="container text-center relative">
@@ -48,12 +35,12 @@ export default function UserProfile({ data }: any) {
         <button
           className="border-2 border-black rounded-full mb-2 px-2 dark:border-white"
           onClick={() => {
-            handleLogout();
+            Logout();
+            window.location.href = "/";
           }}
         >
           Log out
         </button>
-        <p>{error}</p>
       </div>
     </div>
   );

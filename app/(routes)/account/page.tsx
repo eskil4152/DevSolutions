@@ -25,7 +25,11 @@ export default function Account() {
         )}
       </div>
     );
-  } else if (response?.status === 404) {
+  } else if (
+    response?.status === 401 ||
+    response?.status === 403 ||
+    response?.status === 404
+  ) {
     return (
       <div>
         <h1>You do not have an account, or you are not logged in</h1>
