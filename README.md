@@ -2,10 +2,10 @@
 
 Enter desc here
 
-# SET COOKIE ON SECURE BEFORE PRODUCTION
-### secure cookie unavailable over http on safari
-
 ## TODO
+
+- [ ] Fix expired tokens
+
 - [ ] Admin Pages
   - [ ] FAQ
     - [ ] Add
@@ -36,6 +36,7 @@ Enter desc here
     - [ ] Update design
   - [x] View a specific product
     - [ ] Update design
+    - [ ] Add to cart
 
 - [ ] User
   - [x] Log in
@@ -45,6 +46,10 @@ Enter desc here
   - [ ] See status of ongoing project
   - [ ] Update profile function
   - [ ] Update design
+
+- [ ] Cart
+  - [ ] Add cart functionality
+  - [ ] Expand with payment & such
 
 - [ ] Payment Page
 - [ ] Update payment status automatically
