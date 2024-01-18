@@ -29,7 +29,7 @@ export default function Orders() {
   } else if (response?.status === 401) {
     return (
       <div>
-        <h1>Unauthorized</h1>
+        <h1>Please log in to view your orders</h1>
       </div>
     );
   } else if (error) {

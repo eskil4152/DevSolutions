@@ -6,30 +6,55 @@ Enter desc here
 ### secure cookie unavailable over http on safari
 
 ## TODO
-- [x] Get FAQ from API
-- [ ] Improve FAQ design
-- [ ] Improve products design
+- [ ] Admin Pages
+  - [ ] FAQ
+    - [ ] Add
+    - [ ] Remove
+  - [ ] Products edit
+    - [ ] Add products
+    - [ ] Edit products
+    - [ ] Remove products
+  - [ ] Orders
+    - [ ] View all orders
+    - [ ] Update orders
+    - [ ] Cancel orders
+  - [ ] View all users / mods / admin
+    - [ ] Revoke mods status
+  - [ ] Update Orders status
+
+- [x] FAQ
+  - [x] Get all
+  - [ ] Update design
+
+- [x] Orders
+  - [ ] Make new order
+  - [x] Get all orders from user
+  - [ ] Get specific order from user
+
+- [x] Products
+  - [x] View all products
+    - [ ] Update design
+  - [x] View a specific product
+    - [ ] Update design
+
+- [ ] User
+  - [x] Log in
+  - [x] Register
+  - [x] Log out
+  - [x] View profile
+  - [ ] See status of ongoing project
+  - [ ] Update profile function
+  - [ ] Update design
+
+- [ ] Payment Page
+- [ ] Update payment status automatically
+
 - [ ] Fix order type-any
 - [ ] Drastically improve 'About us'
+
 - [ ] Do anything with landing page
-- [ ] Make it so users can log out
-- [x] Add login and account (requires server-side login as well)
-    - [ ] Make and customise user page
-        - [x] Name on top, then user info
-        - [x] Big 'show purchases' button
-        - [ ] See purchases
-        - [ ] See status of ongoing project
-        - [ ] Change account details / change account page
-    - [ ] Make and customise admin page
-        - [ ] View users
-        - [ ] View moderators, ability to revoke mod status
-        - [x] Button for admin orders page
-            - [ ] Actual update to db
-        - [x] Button for admin faq page
-            - [ ] Actual update to db
-        - [x] Button for admin products page
-            - [ ] Actual update to db
-        - [ ] Metrics
-            - [ ] Make metrics
+        
+- [ ] Metrics
+    - [ ] Make metrics
+
 - [x] Add new font, check Google Fonts
-- [ ] More

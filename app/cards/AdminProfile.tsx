@@ -1,21 +1,8 @@
-import Logout from "@/ApiCallers/LogoutAPI";
 import Link from "next/link";
 import { useState } from "react";
+import Logout from "../tools/Logout";
 
 export default function AdminProfile({ data }: any) {
-  const [error, setError] = useState("");
-
-  async function handleLogout() {
-    const data = await Logout();
-
-    if (data.status !== 200) {
-      setError("An error occured when attempting to log out, please try again");
-    }
-
-    setError("");
-    window.location.href = "/";
-  }
-
   return (
     <div className="container text-center relative">
       <div>
@@ -67,20 +54,13 @@ export default function AdminProfile({ data }: any) {
         <button
           className="border-2 border-black rounded-full mb-2 px-2 dark:border-white"
           onClick={() => {
-            handleLogout();
+            Logout();
+            window.location.href = "/";
           }}
         >
-          Log out (not working)
+          Log out
         </button>
-        <p>{error}</p>
       </div>
     </div>
   );
 }
-
-// Logout will not work as cookie is HTTPonly
-// Not sure what to do
-const handleLogout = () => {
-  //Cookies.remove("Authentication", { path: "/", domain: "localhost" });
-  // window.location.href = "/login";
-};
