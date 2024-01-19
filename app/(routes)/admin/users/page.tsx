@@ -16,13 +16,15 @@ export default function AdminUsers() {
   if (response?.status === 200) {
     return (
       <div className="text-center p-5">
-        {response.data.map((user: any) => (
-          <div key={user.id} className="py-4">
-            <h1>{user.id}</h1>
-            <h1>{user.firstname} {user.lastname}</h1>
-            <h1>{user.email}</h1>
-          </div>
-          ))}
+        { response.data[0] == null ? (<h1>No people</h1>) : (
+          response.data.map((user: any) => (
+            <div key={user.id} className="py-4">
+              <h1>{user.id}</h1>
+              <h1>{user.firstname} {user.lastname}</h1>
+              <h1>{user.email}</h1>
+            </div>
+            )))
+        }
       </div>
       );
   } else if (response?.status === 401 || response?.status === 403) {
