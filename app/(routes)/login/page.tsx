@@ -1,6 +1,6 @@
 "use client";
 
-import LogInAPI from "@/ApiCallers/LogInApi";
+import LogInAPI from "@/ApiCallers/User/LogInApi";
 import Link from "next/link";
 import { useState } from "react";
 

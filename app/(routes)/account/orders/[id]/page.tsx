@@ -1,6 +1,6 @@
 "use client";
 
-import GetOrderById from "@/ApiCallers/GetOrderById";
+import GetOrderById from "@/ApiCallers/Orders/GetOrderById";
 
 export default function OrderById({ params }: { params: { id: string } }) {
   const { loading, error, response } = GetOrderById(params.id);
@@ -20,9 +20,9 @@ export default function OrderById({ params }: { params: { id: string } }) {
       </div>
     );
   } else if (response?.status === 401) {
-    return <div>401</div>;
+    return <div>This order does not belong to you</div>;
   } else if (response?.status === 404) {
-    return <div>404</div>;
+    return <div>This order does not belong to you</div>;
   } else if (error) {
     return (
       <div>

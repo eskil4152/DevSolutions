@@ -1,7 +1,7 @@
 "use client";
 
 import ProductPreview from "@/app/cards/ProductPreview";
-import GetProducts from "@/ApiCallers/GetProductsAPI";
+import GetProducts from "@/ApiCallers/Products/GetProductsAPI";
 
 export default function Products() {
   const { loading, error, response } = GetProducts();

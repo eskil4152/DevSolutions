@@ -1,6 +1,6 @@
 "use client";
 
-import GetProductsById from "@/ApiCallers/GetProductByIdAPI";
+import GetProductsById from "@/ApiCallers/Products/GetProductByIdAPI";
 
 export default function ProductsById({ params }: { params: { id: string } }) {
   const { loading, error, response } = GetProductsById(params.id);

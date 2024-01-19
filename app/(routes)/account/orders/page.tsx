@@ -1,6 +1,6 @@
 "use client";
 
-import OrdersAPI from "@/ApiCallers/OrdersAPI";
+import OrdersAPI from "@/ApiCallers/Orders/OrdersAPI";
 import OrdersCard from "@/app/cards/OrdersCard";
 
 export default function Orders() {

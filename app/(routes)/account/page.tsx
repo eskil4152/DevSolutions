@@ -1,6 +1,6 @@
 "use client";
 
-import UserApi from "@/ApiCallers/UserApi";
+import UserApi from "@/ApiCallers/User/UserApi";
 import AdminProfile from "@/app/cards/AdminProfile";
 import UserProfile from "@/app/cards/UserProfile";
 
