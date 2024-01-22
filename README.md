@@ -5,6 +5,7 @@ Enter desc here
 ## TODO
 
 - [ ] Fix expired tokens
+- [ ] User type
 
 - [ ] Admin Pages
   - [ ] FAQ
@@ -15,11 +16,19 @@ Enter desc here
     - [ ] Edit products
     - [ ] Remove products
   - [ ] Orders
-    - [ ] View all orders
+    - [x] View all orders
+      - [ ] Design
     - [ ] Update orders
     - [ ] Cancel orders
-  - [ ] View all users / mods / admin
-    - [ ] Revoke mods status
+  - [ ] View all users / mods
+    - [x] View all users
+      - [ ] Design
+    - [x] View all mods
+      - [ ] Design
+    - [ ] Grant moderator status
+    - [ ] Revoke moderator status
+    - [ ] Grand admin status
+    - [ ] Revoke admin status
   - [ ] Update Orders status
 
 - [x] FAQ

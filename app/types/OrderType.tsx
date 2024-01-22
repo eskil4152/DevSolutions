@@ -1,4 +1,5 @@
 type OrderType = {
+  user: any;
   id: number;
   productName: string;
   price: number;

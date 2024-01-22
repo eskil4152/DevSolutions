@@ -1,6 +1,6 @@
 "use client";
 
-import RegisterAPI from "@/ApiCallers/RegisterApi";
+import RegisterAPI from "@/ApiCallers/User/RegisterApi";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
