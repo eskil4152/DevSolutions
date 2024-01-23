@@ -1,7 +1,7 @@
 "use client";
 
 import OrdersAPI from "@/ApiCallers/Orders/OrdersAPI";
-import OrdersCard from "@/app/cards/OrdersCard";
+import OrderPreview from "@/app/cards/Previews/OrderPreview";
 
 export default function Orders() {
   const { error, loading, response } = OrdersAPI();
@@ -19,9 +19,9 @@ export default function Orders() {
   if (response?.status === 200) {
     return (
       <div className="text-center flex flex-row px-[20vw] py-[10vh]">
-        {response.data.map((order: any) => (
+        {response.data.map((order: OrderType) => (
           <div key={order.id} className="px-2">
-            <OrdersCard order={order} key={order.id} />
+            <OrderPreview order={order} key={order.id} />
           </div>
         ))}
       </div>

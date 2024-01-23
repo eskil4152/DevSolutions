@@ -1,6 +1,6 @@
 "use client";
 
-import ProductPreview from "@/app/cards/ProductPreview";
+import ProductPreview from "@/app/cards/Previews/ProductPreview";
 import GetProducts from "@/ApiCallers/Products/GetProductsAPI";
 
 export default function Products() {

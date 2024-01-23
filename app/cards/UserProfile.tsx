@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { useState } from "react";
 import Logout from "../tools/Logout";
 
 export default function UserProfile({ data }: any) {
@@ -24,7 +23,7 @@ export default function UserProfile({ data }: any) {
       </div>
 
       <div className="bottom-0 absolute w-full">
-        <Link href={"/account/update"}>
+        <Link href={{ pathname: "/account/update", query: { ...data } }}>
           <button className="border-2 border-black rounded-full mb-2 px-2 dark:border-white">
             Change profile information
           </button>
