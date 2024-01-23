@@ -2,9 +2,9 @@
 
 export default function Home() {
   return (
-    <div className="container text-center my-[10vh]">
+    <div className="container text-center mt-[10vh] mb-[10vh]">
       <div className="">
-        <p className="text-2xl font-bold">Welcome to DevSolutions</p>
+        <p className="text-4xl font-bold">Welcome to DevSolutions</p>
         <button className="border-2 border-black dark:border-white py-2 px-6 mt-2 rounded-full">
           Get Started
         </button>
@@ -16,6 +16,18 @@ export default function Home() {
           <div className="border-2 border-black dark:border-white p-2">
             <p className="text-lg font-semibold">Web Solutions</p>
             <p>We can build your dream website</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. At autem
+              fugiat minus natus neque quibusdam quidem rem, sed? Accusantium,
+              assumenda autem deserunt earum esse iste laudantium nihil nobis
+              odit sequi?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. At autem
+              fugiat minus natus neque quibusdam quidem rem, sed? Accusantium,
+              assumenda autem deserunt earum esse iste laudantium nihil nobis
+              odit sequi?
+            </p>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. At autem
               fugiat minus natus neque quibusdam quidem rem, sed? Accusantium,
