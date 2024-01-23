@@ -9,7 +9,8 @@ export default function Header() {
   return (
     <div
       id="header"
-      className="flex justify-between items-center border-b-2 border-black p-6"
+      className="flex justify-between items-center border-b-2 border-black p-6
+      fixed top-0 w-full z-50"
     >
       <Link
         className="w-1/3"
