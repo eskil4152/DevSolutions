@@ -1,12 +1,9 @@
 "use client";
 
 import RegisterAPI from "@/ApiCallers/User/RegisterApi";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Register() {
-  const router = useRouter();
-
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [username, setUsername] = useState("");
@@ -49,7 +46,7 @@ export default function Register() {
     if (!passwordRegex.test(password)) {
       setPasswordError(
         "Password needs to be at least 8 characters, " +
-          "and contain at least 1 uppercase letter, 1 lowercare letter, and 1 number"
+          "and contain at least 1 uppercase letter, 1 lowercare letter, and 1 number",
       );
       setValidPassword(false);
     } else if (password !== confirmPassword) {
@@ -94,7 +91,7 @@ export default function Register() {
       lastname,
       username,
       password,
-      email
+      email,
     );
 
     if (data.status === 200) {

@@ -5,7 +5,7 @@ export default function UserProfile({ data }: any) {
   // data.[firstname, lastname, username, email, role]
 
   return (
-    <div className="container text-center relative">
+    <div className="container text-center">
       <div>
         <h1 className="text-5xl font-semibold uppercase p-4">
           {data.username}
