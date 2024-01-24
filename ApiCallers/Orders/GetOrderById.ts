@@ -1,10 +1,10 @@
 import fetchJSON from "@/app/tools/FetchJson";
-import GetFromStorage from "@/app/tools/GetFromStorage";
+import GetAuthorizationToken from "@/app/tools/GetAuthorizationToken";
 import useLoading from "@/app/tools/UseLoading";
 import apiUrl from "@/app/tools/config";
 
 export default function GetOrderById(id: string) {
-  const token = GetFromStorage();
+  const token = GetAuthorizationToken();
 
   const { loading, error, response } = useLoading(
     async () =>
@@ -12,7 +12,7 @@ export default function GetOrderById(id: string) {
         headers: {
           Authorization: `${token}`,
         },
-      })
+      }),
   );
 
   return { loading, error, response };

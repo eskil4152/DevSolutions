@@ -10,6 +10,7 @@ export default async function LogInAPI(username: string, password: string) {
       username: username,
       password: password,
     }),
+    credentials: "include",
   });
 
   if (data.ok) {

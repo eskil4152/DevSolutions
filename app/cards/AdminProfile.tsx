@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { useState } from "react";
 import Logout from "../tools/Logout";
 
 export default function AdminProfile({ data }: any) {
   return (
-    <div className="container text-center relative">
+    <div className="container text-center">
       <div>
         <h1>ADMIN MODE</h1>
         <h1 className="text-5xl font-semibold uppercase p-4">

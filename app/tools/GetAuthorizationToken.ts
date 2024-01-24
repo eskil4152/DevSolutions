@@ -1,4 +1,4 @@
-export default function GetFromStorage() {
+export default function GetAuthorizationToken() {
   if (typeof window !== "undefined") {
     return localStorage.getItem("Authorization") || "";
   }

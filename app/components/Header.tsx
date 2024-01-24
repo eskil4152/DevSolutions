@@ -1,15 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import GetFromStorage from "../tools/GetFromStorage";
+import GetAuthorizationToken from "../tools/GetAuthorizationToken";
 
 export default function Header() {
-  const hasToken = GetFromStorage();
+  const hasToken = GetAuthorizationToken();
 
   return (
     <div
       id="header"
-      className="flex justify-between items-center border-b-2 border-black p-4"
+      className="flex justify-between items-center border-b-2 border-black p-6
+      fixed top-0 w-full z-50"
     >
       <Link
         className="w-1/3"
@@ -17,17 +18,28 @@ export default function Header() {
           pathname: "/",
         }}
       >
-        <h3 className="font-bold text-lg">DevSolutions</h3>
+        <h3 className="font-bold text-3xl">DEVSOLUTIONS</h3>
       </Link>
 
-      <Link
-        className="w-1/3 text-center"
-        href={{
-          pathname: "/products",
-        }}
-      >
-        <p>Products</p>
-      </Link>
+      <div className={"w-1/3 flex flex-row justify-center gap-10"}>
+        <Link
+          className="text-center"
+          href={{
+            pathname: "/products",
+          }}
+        >
+          <p className="font-semibold text-xl">Services</p>
+        </Link>
+
+        <Link
+          className="text-center"
+          href={{
+            pathname: "/customerservice",
+          }}
+        >
+          <p className="font-semibold text-xl">Contact Us</p>
+        </Link>
+      </div>
 
       <div className="w-1/3 text-right">
         {hasToken ? (
@@ -36,7 +48,7 @@ export default function Header() {
               pathname: "/account",
             }}
           >
-            <p>Account</p>
+            <p className="font-semibold text-xl">Account</p>
           </Link>
         ) : (
           <Link
@@ -44,7 +56,7 @@ export default function Header() {
               pathname: "/login",
             }}
           >
-            <p>Log In</p>
+            <p className="font-semibold text-xl">Log In</p>
           </Link>
         )}
       </div>

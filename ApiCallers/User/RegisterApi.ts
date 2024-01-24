@@ -7,7 +7,7 @@ export default async function RegisterAPI(
   lastname: string,
   username: string,
   password: string,
-  email: string
+  email: string,
 ) {
   const data = await fetch(`${apiUrl}/api/register`, {
     method: "post",
@@ -21,6 +21,7 @@ export default async function RegisterAPI(
       password: password,
       email: email,
     }),
+    credentials: "include",
   });
 
   if (data.ok) {
