@@ -4,7 +4,9 @@ export default function Home() {
   return (
     <div className="container text-center mt-[10vh] mb-[10vh]">
       <div className="">
-        <p className="text-4xl font-bold">Welcome to DevSolutions</p>
+        <p className="text-4xl font-bold">
+          Welcome to DevSolutions - TEST TEXT
+        </p>
         <button className="border-2 border-black dark:border-white py-2 px-6 mt-2 rounded-full">
           Get Started
         </button>
