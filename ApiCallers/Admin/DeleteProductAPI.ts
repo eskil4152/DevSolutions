@@ -15,7 +15,7 @@ async function DeleteProductAPI(id: number) {
     throw new Error(`Product with id ${id} does not exist`);
   } else if (response.status === 401 || response.status === 403) {
     throw new Error(`You are not authorized to delete products`);
-  } else {
+  } else if (!response.ok) {
     throw new Error(`Failed to delete product. Unknown error occurred`);
   }
 

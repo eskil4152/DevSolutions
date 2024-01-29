@@ -15,7 +15,7 @@ export default function ProductPreview({ product }: TypeProps) {
     <div className="border-2 border-black dark:border-white p-2 flex flex-col items-center">
       <p>{name}</p>
       <p>{description}</p>
-      <p>NOK {price}kr</p>
+      <p>NOK {parseInt(String(price)).toLocaleString()}</p>
 
       <div className="h-1 w-[50%] bg-black dark:bg-white my-2" />
 

@@ -4,6 +4,7 @@ import GetProductsAdmin from "@/ApiCallers/Admin/GetAllProductsAdminAPI";
 import ProductAdmin from "@/app/cards/Previews/Admin/ProductAdmin";
 import React from "react";
 import DeleteProductAPI from "@/ApiCallers/Admin/DeleteProductAPI";
+import Link from "next/link";
 
 export default function AdminProducts() {
   const { loading, error, response } = GetProductsAdmin();
@@ -27,7 +28,7 @@ export default function AdminProducts() {
 
   if (response?.status === 200) {
     return (
-      <div id="container">
+      <div>
         <p className="text-center mt-8">All products:</p>
         <div className="grid grid-cols-2 gap-4 p-10">
           {response.data.map((products: ProductType) => (
@@ -40,12 +41,18 @@ export default function AdminProducts() {
               >
                 Delete
               </button>
-
               <button>Update (501)</button>
               <p>{deleteError}</p>
             </div>
           ))}
         </div>
+
+        <Link
+          href={"/admin/products/add"}
+          className="text-center w-full bottom-0 absolute text-xl font-bold my-5"
+        >
+          <button>Add new Product</button>
+        </Link>
       </div>
     );
   } else if (response?.status === 401 || response?.status === 403) {
