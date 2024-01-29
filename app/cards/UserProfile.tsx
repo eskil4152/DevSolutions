@@ -25,7 +25,7 @@ export default function UserProfile({ data }: any) {
       <div className="bottom-0 absolute w-full">
         <Link href={{ pathname: "/account/update", query: { ...data } }}>
           <button className="border-2 border-black rounded-full mb-2 px-2 dark:border-white">
-            Change profile information
+            Change profile information (501)
           </button>
         </Link>
 

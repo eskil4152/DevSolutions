@@ -15,13 +15,6 @@ export default function Account() {
     );
   }
 
-  const userRole = document.cookie.replace(
-    /(?:(?:^|.*;\s*)userRole\s*=\s*([^;]*).*$)|^.*$/,
-    "$1",
-  );
-
-  console.log("Cookie: " + userRole);
-
   if (response?.status === 200) {
     return (
       <div className="">
