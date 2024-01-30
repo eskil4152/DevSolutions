@@ -12,9 +12,9 @@ Enter desc here
     - [ ] Add
     - [ ] Remove
   - [ ] Products edit
-    - [ ] Add products
+    - [x] Add products
     - [ ] Edit products
-    - [ ] Remove products
+    - [x] Remove products
   - [ ] Orders
     - [x] View all orders
       - [ ] Design
@@ -25,9 +25,9 @@ Enter desc here
       - [ ] Design
     - [x] View all mods
       - [ ] Design
-    - [ ] Grant moderator status
-    - [ ] Revoke moderator status
-    - [ ] Grand admin status
+    - [x] Grant moderator status
+    - [x] Revoke moderator status
+    - [x] Grant admin status
     - [ ] Revoke admin status
   - [ ] Update Orders status
 

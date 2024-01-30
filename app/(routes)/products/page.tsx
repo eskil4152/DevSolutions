@@ -20,7 +20,7 @@ export default function Products() {
         <h1 className="text-2xl font-semibold mt-5">SERVICES: </h1>
         <div
           id="projects"
-          className="grid grid-rows-2 grid-cols-2 gap-20 px-[15vw] my-5"
+          className="grid grid-cols-2 gap-y-20 py-4 justify-items-center"
         >
           {response.data.map((product: ProductType) => (
             <ProductPreview product={product} key={product.id} />

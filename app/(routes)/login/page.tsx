@@ -32,7 +32,7 @@ export default function LogIn() {
   }
 
   return (
-    <div className="text-center ">
+    <div className="text-center">
       <h1 className="text-xl font-semibold mt-2">Log In</h1>
 
       <form onSubmit={handleSubmit}>
