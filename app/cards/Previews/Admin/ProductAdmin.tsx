@@ -10,7 +10,10 @@ export default function ProductAdmin({ product }: TypeProps) {
   const { id, name } = product;
 
   return (
-    <div className="border-2 border-black dark:border-white p-2 flex flex-col items-center">
+    <div
+      className="border-2 border-black dark:border-white p-2 flex flex-col items-center"
+      key={product.id}
+    >
       <p>Product id:</p>
       <p>{id}</p>
 

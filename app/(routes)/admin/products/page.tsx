@@ -32,7 +32,7 @@ export default function AdminProducts() {
         <p className="text-center mt-8">All products:</p>
         <div className="grid grid-cols-2 gap-4 p-10">
           {response.data.map((products: ProductType) => (
-            <div id={products.id.toString()}>
+            <div key={products.id.toString()}>
               <ProductAdmin product={products} key={products.id} />
               <button
                 onClick={() => {
