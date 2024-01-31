@@ -66,7 +66,7 @@ export default function AdminUsers() {
 
         {showConfirmation && (
           <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-white p-4">
+            <div className="bg-white p-4 dark:bg-black dark:border-white dark:border-2">
               <p>{`Are you sure you want to promote '${userToPromote?.username}' to moderator?`}</p>
               <div className="flex gap-2 justify-center">
                 <button
