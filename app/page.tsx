@@ -1,8 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
+  const [showDev, setShowDev] = useState(true);
+
   return (
     <div className="container text-center mt-[10vh] mb-[10vh]">
       <div className="">
@@ -44,6 +47,25 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {showDev && (
+        <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-4 dark:bg-black dark:border-white dark:border-2">
+            <p>{`This website is still under development`}</p>
+            <p>{`You are currently viewing the prototype`}</p>
+            <div className="flex gap-2 justify-center">
+              <button
+                onClick={() => {
+                  setShowDev(false);
+                }}
+                className="font-semibold"
+              >
+                I understand
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

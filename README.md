@@ -72,3 +72,4 @@ Enter desc here
     - [ ] Make metrics
 
 - [x] Add new font, check Google Fonts
+- [ ] Terms and agreements (norway + international)
