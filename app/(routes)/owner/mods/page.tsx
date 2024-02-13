@@ -5,7 +5,7 @@ import ChangeRoleAPI from "@/ApiCallers/Admin/ChangeRoleAPI";
 import { UserRoleChange } from "@/Enums/UserRoleChange";
 import GetAllModeratorsAPI from "@/ApiCallers/Admin/GetAllModeratorsAPI";
 
-export default function AdminUsers() {
+export default function OwnerMods() {
   const { loading, error, response } = GetAllModeratorsAPI();
 
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -52,6 +52,14 @@ export default function AdminUsers() {
                 {user.firstname} {user.lastname}
               </h1>
               <h1>{user.email}</h1>
+              <button
+                onClick={() => {
+                  handlePromoteClick(user);
+                  setAction(UserRoleChange.PROMOTE);
+                }}
+              >
+                PROMOTE
+              </button>
               <button
                 onClick={() => {
                   handlePromoteClick(user);
