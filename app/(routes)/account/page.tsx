@@ -4,6 +4,7 @@ import UserApi from "@/ApiCallers/User/UserApi";
 import AdminProfile from "@/app/cards/AdminProfile";
 import React from "react";
 import OwnerProfile from "@/app/cards/OwnerProfile";
+import UserProfile from "@/app/cards/UserProfile";
 
 export default function Account() {
   const { loading, error, response } = UserApi();
@@ -24,7 +25,7 @@ export default function Account() {
         ) : response.data.role === "ADMIN" ? (
           <AdminProfile data={response.data} />
         ) : (
-          <AdminProfile data={response.data} />
+          <UserProfile data={response.data} />
         )}
       </div>
     );
