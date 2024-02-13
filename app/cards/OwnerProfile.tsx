@@ -1,11 +1,11 @@
 import Link from "next/link";
 import LogOutApi from "@/ApiCallers/User/LogOutApi";
 
-export default function AdminProfile({ data }: any) {
+export default function OwnerProfile({ data }: any) {
   return (
     <div className="container text-center">
       <div>
-        <h1>ADMIN MODE</h1>
+        <h1>OWNER MODE</h1>
         <h1 className="text-5xl font-semibold uppercase p-4">
           {data.username}
         </h1>
@@ -25,7 +25,12 @@ export default function AdminProfile({ data }: any) {
               Update Order Statuses
             </button>
           </Link>
-          <Link href="/admin/mods">
+          <Link href="/owner/admins">
+            <button className="border-[1px] border-black px-16 py-2 rounded-full mt-2 dark:border-white">
+              View Admins
+            </button>
+          </Link>
+          <Link href="/owner/mods">
             <button className="border-[1px] border-black px-16 py-2 rounded-full mt-2 dark:border-white">
               View Moderators
             </button>
@@ -54,7 +59,6 @@ export default function AdminProfile({ data }: any) {
           className="border-2 border-black rounded-full mb-2 px-2 dark:border-white"
           onClick={() => {
             LogOutApi();
-            window.location.href = "/";
           }}
         >
           Log out

@@ -2,6 +2,8 @@
 
 import UserApi from "@/ApiCallers/User/UserApi";
 import AdminProfile from "@/app/cards/AdminProfile";
+import React from "react";
+import OwnerProfile from "@/app/cards/OwnerProfile";
 import UserProfile from "@/app/cards/UserProfile";
 
 export default function Account() {
@@ -18,10 +20,12 @@ export default function Account() {
   if (response?.status === 200) {
     return (
       <div className="">
-        {response.data.role === "USER" ? (
-          <UserProfile data={response.data} />
-        ) : (
+        {response.data.role === "OWNER" ? (
+          <OwnerProfile data={response.data} />
+        ) : response.data.role === "ADMIN" ? (
           <AdminProfile data={response.data} />
+        ) : (
+          <UserProfile data={response.data} />
         )}
       </div>
     );

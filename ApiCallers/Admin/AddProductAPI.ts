@@ -1,5 +1,4 @@
 import apiUrl from "@/app/tools/config";
-import GetAuthorizationToken from "@/app/tools/GetAuthorizationToken";
 
 export default async function AddProductAPI(
   name: string,
@@ -10,7 +9,6 @@ export default async function AddProductAPI(
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `${GetAuthorizationToken()}`,
     },
     body: JSON.stringify({
       productName: name,

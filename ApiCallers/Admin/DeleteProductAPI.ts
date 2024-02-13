@@ -1,12 +1,10 @@
 import apiUrl from "@/app/tools/config";
-import GetAuthorizationToken from "@/app/tools/GetAuthorizationToken";
 
 async function DeleteProductAPI(id: number) {
   const response = await fetch(`${apiUrl}/api/admin/products/delete/` + id, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `${GetAuthorizationToken()}`,
     },
     credentials: "include",
   });

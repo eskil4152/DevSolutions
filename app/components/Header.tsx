@@ -1,11 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import GetAuthorizationToken from "../tools/GetAuthorizationToken";
 
 export default function Header() {
-  const hasToken = GetAuthorizationToken();
-
   return (
     <div
       id="header"
@@ -42,7 +39,7 @@ export default function Header() {
       </div>
 
       <div className="w-1/3 text-right">
-        {hasToken ? (
+        {1 ? (
           <Link
             href={{
               pathname: "/account",

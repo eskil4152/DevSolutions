@@ -3,10 +3,10 @@
 import { useState } from "react";
 import ChangeRoleAPI from "@/ApiCallers/Admin/ChangeRoleAPI";
 import { UserRoleChange } from "@/Enums/UserRoleChange";
-import GetAllModeratorsAPI from "@/ApiCallers/Admin/GetAllModeratorsAPI";
+import GetAllAdminsAPI from "@/ApiCallers/Owner/GetAllAdminsAPI";
 
-export default function AdminUsers() {
-  const { loading, error, response } = GetAllModeratorsAPI();
+export default function OwnerMods() {
+  const { loading, error, response } = GetAllAdminsAPI();
 
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [userToChange, setUserToChange] = useState<UserType | null>(null);
