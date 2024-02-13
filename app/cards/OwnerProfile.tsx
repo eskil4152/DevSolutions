@@ -58,7 +58,9 @@ export default function OwnerProfile({ data }: any) {
         <button
           className="border-2 border-black rounded-full mb-2 px-2 dark:border-white"
           onClick={() => {
-            LogOutApi();
+            LogOutApi().then(() => {
+              window.location.href = "/";
+            });
           }}
         >
           Log out
