@@ -9,7 +9,7 @@ export default async function RegisterAPI(
   password: string,
   email: string,
 ) {
-  const data = await fetch(`${apiUrl}/api/register`, {
+  return await fetch(`${apiUrl}/api/register`, {
     method: "post",
     headers: {
       "Content-Type": "application/json",
@@ -23,13 +23,4 @@ export default async function RegisterAPI(
     }),
     credentials: "include",
   });
-
-  if (data.ok) {
-    const jwtToken = data.headers.get("Authorization");
-    if (jwtToken) localStorage.setItem("Authorization", jwtToken);
-
-    return data;
-  }
-
-  return data;
 }

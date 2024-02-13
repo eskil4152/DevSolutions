@@ -3,7 +3,6 @@
 import apiUrl from "@/app/tools/config";
 import fetchJSON from "../../app/tools/FetchJson";
 import useLoading from "../../app/tools/UseLoading";
-import GetAuthorizationToken from "@/app/tools/GetAuthorizationToken";
 
 export default function GetProductsAdmin() {
   const { loading, error, response } = useLoading(
@@ -12,8 +11,8 @@ export default function GetProductsAdmin() {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `${GetAuthorizationToken()}`,
         },
+        credentials: "include",
       }),
   );
 

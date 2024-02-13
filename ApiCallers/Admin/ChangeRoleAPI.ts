@@ -1,5 +1,4 @@
 import apiUrl from "@/app/tools/config";
-import GetAuthorizationToken from "@/app/tools/GetAuthorizationToken";
 import { UserRoleChange } from "@/Enums/UserRoleChange";
 
 export default async function ChangeRoleAPI(
@@ -11,7 +10,6 @@ export default async function ChangeRoleAPI(
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `${GetAuthorizationToken()}`,
     },
     body: JSON.stringify({
       id: id,

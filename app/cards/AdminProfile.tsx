@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Logout from "../tools/Logout";
+import LogOutApi from "@/ApiCallers/User/LogOutApi";
 
 export default function AdminProfile({ data }: any) {
   return (
@@ -53,7 +53,7 @@ export default function AdminProfile({ data }: any) {
         <button
           className="border-2 border-black rounded-full mb-2 px-2 dark:border-white"
           onClick={() => {
-            Logout();
+            LogOutApi();
             window.location.href = "/";
           }}
         >
