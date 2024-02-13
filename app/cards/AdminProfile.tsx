@@ -53,8 +53,9 @@ export default function AdminProfile({ data }: any) {
         <button
           className="border-2 border-black rounded-full mb-2 px-2 dark:border-white"
           onClick={() => {
-            LogOutApi();
-            window.location.href = "/";
+            LogOutApi().then(() => {
+              window.location.href = "/";
+            });
           }}
         >
           Log out
